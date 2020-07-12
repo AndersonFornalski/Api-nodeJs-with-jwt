@@ -3,6 +3,7 @@ const  bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const userController = require("./controller/userController");
 const projectController = require("./controller/projectController");
+const cors =require("cors");
 
 const app = express(); 
 
@@ -11,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended : false}));
 
 
 
-
+app.use(cors());
 mongoose.connect("mongodb+srv://drogabel:drogabel@drogabel-kj10u.mongodb.net/test?retryWrites=true&w=majority",
 { useNewUrlParser: true, useUnifiedTopology:true,},
 console.log("MongoDb Conectado"))
